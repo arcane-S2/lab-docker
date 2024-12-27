@@ -1,0 +1,11 @@
+
+FROM python:3.11-slim
+WORKDIR /app
+
+#Copia del .ipynb
+COPY reduc-operation-alumno01.ipynb /app/reduc-operation-alumno01.ipynb
+
+#Instalacion de Jupyter, numpy y numba
+RUN pip install jupyter numpy numba
+
+CMD ["ipython", "/app/reduc-operation-alumno01.ipynb", "100000"]
